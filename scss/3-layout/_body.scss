@@ -1,0 +1,246 @@
+main {
+    padding: 3.5rem 0;
+    background-color: $main-background;
+
+    #tag-section {
+        position: relative;
+        top: -100px;
+
+        .container {
+            width: 328px;
+            margin: 0 auto;
+            background-color: $tag-section-background;
+            box-shadow: 0 10px 10px 0 rgb(180, 180, 180);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            #tag-list {
+                padding: 1.5rem 0 0.5rem 1.5rem;
+                
+                li {
+                    height: 30px;
+                    margin: 0 0.5rem 1rem 0;
+                    display: inline-block;
+
+                    .tag {
+                        height: 100%;
+                        padding: 0 0 0 0.5rem;
+                        background-color: $tag-background;
+                        border-radius: 5px;
+                        color: $word-color-2;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        font-weight: 700;
+
+                        .delete-tag {
+                            margin-left: 0.5rem;
+                            height: 100%;
+                            width: 30px;
+                            background: $delete-btn-background url("../images/icon-remove.svg") no-repeat center;
+                            border: none;
+                            border-radius: 0 5px 5px 0;
+                        }
+
+                        .delete-tag:hover {
+                            background-color: $delete-btn-background-hover;
+                        }
+                    }
+                }
+            }
+
+            .clear-btn {
+                width: 15%;
+                background-color: transparent;
+                border: none;
+                color: $word-color-3;
+                font-weight: 700;
+            }
+            
+            .clear-btn:hover {
+                color: $word-color-2;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #tag-section.none {
+        display: none;
+    }
+
+    #job-section {
+        .container {
+            width: 328px;
+            margin: 0 auto;
+    
+            #job-list {
+                .job {
+                    margin-bottom: 2.5rem;
+                    padding: 2rem 1.5rem 0;
+                    background-color: $job-background;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 20px 0 rgb(180, 180, 180);
+                    position: relative;
+    
+                    .logo {
+                        height: 50px;
+                        width: 50px;
+                        position: absolute;
+                        top: -25px;
+                    }
+    
+                    .job-info {
+                        .company {
+                            p {
+                                margin-right: 0.25rem;
+                                display: inline-block;
+                                font-weight: 700;
+                            }
+    
+                            .company-name {
+                                color: $word-color-2;
+                            }
+    
+                            .new {
+                                padding: 0.25rem;
+                                background-color: $new-background;
+                                border-radius: 50px;
+                                color: $word-color-1;
+                                text-transform: uppercase;
+                            }
+    
+                            .featured {
+                                padding: 0.25rem;
+                                background-color: $featured-background;
+                                border-radius: 50px;
+                                color: $word-color-2;
+                                text-transform: uppercase;
+                            }
+                        }
+    
+                        .position {
+                            margin: 1rem 0;
+                            cursor: pointer;
+                            font-size: 1rem;
+                        }
+
+                        .position:hover {
+                            color: $word-color-2;
+                        }
+    
+                        .other-info {
+                            color: $word-color-3;
+                            font-weight: 700;
+    
+                            span {
+                                font-weight: 500;
+                            }
+                        }
+                    }
+    
+                    hr {
+                        margin: 1rem 0;
+                        border-color: $word-color-3;
+                    }
+    
+                    .job-tag {
+                        font-weight: 700;
+    
+                        li {
+                            margin: 0 0.5rem 1rem 0;
+                            padding: 0.5rem;
+                            background-color: $tag-background;
+                            border-radius: 5px;
+                            color: $word-color-2;
+                            cursor: pointer;
+                            display: inline-block;
+                        }
+
+                        li:hover {
+                            background-color: $tag-background-hover;
+                            color: $word-color-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        #tag-section, #job-section {
+            .container {
+                width: 552px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        #tag-section, #job-section {
+            .container {
+                width: 704px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    main {
+        #tag-section, #job-section {
+            .container {
+                width: 944px;
+            }
+        }
+
+        #job-section {
+            .container {
+                #job-list {
+                    .job {
+                        padding-bottom: 2rem;
+                        display: grid;
+                        align-items: center;
+                        position: static;
+        
+                        .logo {
+                            grid-column: 1;
+                            grid-row: 1;
+                            height: 90px;
+                            width: 90px;
+                            position: static;
+                        }
+        
+                        hr {
+                            display: none;
+                        }
+
+                        .job-info {
+                            grid-column: 1;
+                            grid-row: 1;
+                            margin-left: 6.75rem;
+
+                            .company {
+                                p {
+                                    margin-right: 1rem;
+                                }
+                            }
+                        }
+
+                        .job-tag {
+                            grid-column: 2;
+                            grid-row: 1;
+                            justify-self: flex-end;
+
+                            li {
+                                margin: 0 0 0 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
